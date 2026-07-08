@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AirLedger — Privacy Policy / Politique de confidentialité</title>
+<meta name="description" content="AirLedger privacy policy: no data is collected, transmitted, or stored anywhere but your own device." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #FF385C;
+    --primary-hover: #E31C5F;
+    --primary-soft: rgba(255, 56, 92, 0.08);
+    --primary-soft-2: rgba(255, 56, 92, 0.14);
+
+    --bg: #FFFFFF;
+    --surface: #FCFCFC;
+    --surface-2: #F7F7F7;
+    --border: #EBEBEB;
+    --divider: #F2F2F2;
+
+    --ink: #1A1A1A;
+    --ink-secondary: #5B5B5B;
+    --ink-tertiary: #9A9A9A;
+
+    --success: #16A34A;
+    --success-soft: rgba(22, 163, 74, 0.10);
+
+    --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+    --radius-sm: 10px;
+    --radius: 16px;
+    --radius-lg: 24px;
+
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-8: 48px;
+    --space-10: 80px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  a { color: var(--primary); text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+  a:hover { color: var(--primary-hover); }
+
+  :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+
+  /* ---------------- Language toggle ---------------- */
+
+  [data-lang-block] { display: none; }
+  [data-lang-block].is-active { display: block; }
+  span[data-lang-block] { display: none; }
+  span[data-lang-block].is-active { display: inline; }
+
+  .lang-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+    display: inline-flex;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .lang-option {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--ink-secondary);
+    cursor: pointer;
+    transition: all 150ms ease;
+  }
+  .lang-option.is-active { background: var(--primary); color: #fff; }
+  .lang-option:not(.is-active):hover { color: var(--ink); }
+
+  /* ---------------- Layout ---------------- */
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: var(--space-10) var(--space-5) 120px; }
+
+  header.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+
+  .mark {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(255, 56, 92, 0.28);
+  }
+  .mark svg { display: block; }
+
+  .brand-row { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .brand-name {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .doc-title {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin: var(--space-2) 0 0;
+  }
+  .doc-updated {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.02em;
+    margin-top: var(--space-2);
+  }
+
+  /* ---------------- Trust summary (signature element) ---------------- */
+
+  .trust-box {
+    background: linear-gradient(180deg, var(--primary-soft) 0%, var(--primary-soft) 100%), var(--surface);
+    border: 1px solid var(--primary-soft-2);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6) var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+  .trust-headline {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-4);
+  }
+  .trust-headline .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--success);
+    box-shadow: 0 0 0 4px var(--success-soft);
+    flex-shrink: 0;
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4) var(--space-5);
+  }
+  @media (max-width: 560px) {
+    .trust-grid { grid-template-columns: 1fr; }
+  }
+  .trust-item {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+  .trust-item .check {
+    flex-shrink: 0;
+    width: 20px; height: 20px;
+    margin-top: 2px;
+  }
+  .trust-item p {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--ink-secondary);
+    line-height: 1.5;
+  }
+  .trust-item strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------------- Content sections ---------------- */
+
+  .toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-8);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--divider);
+  }
+  .toc a {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-secondary);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 150ms ease;
+  }
+  .toc a:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-soft); }
+
+  section.policy-section {
+    margin-bottom: var(--space-8);
+    scroll-margin-top: 24px;
+  }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: var(--space-2);
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    margin: 0 0 var(--space-4);
+    color: var(--ink);
+  }
+
+  p { margin: 0 0 var(--space-4); color: var(--ink-secondary); font-size: 16px; }
+  p:last-child { margin-bottom: 0; }
+
+  ul { margin: 0 0 var(--space-4); padding-left: 0; list-style: none; }
+  ul li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 10px;
+    color: var(--ink-secondary);
+    font-size: 15.5px;
+    line-height: 1.55;
+  }
+  ul li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+  }
+  ul li strong { color: var(--ink); font-weight: 600; }
+
+  .perm-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-5);
+    margin-bottom: var(--space-3);
+  }
+  .perm-name {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary);
+    background: var(--primary-soft);
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: var(--space-3);
+  }
+  .perm-card p { margin: 0; font-size: 15px; }
+
+  code {
+    font-family: var(--mono);
+    font-size: 0.9em;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 2px 6px;
+    border-radius: 5px;
+    color: var(--ink);
+  }
+
+  footer {
+    margin-top: var(--space-10);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--divider);
+    text-align: center;
+  }
+  footer p {
+    font-size: 13px;
+    color: var(--ink-tertiary);
+    margin: 0 0 var(--space-2);
+  }
+  footer a { color: var(--ink-secondary); font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .doc-title { font-size: 32px; }
+    .wrap { padding: 90px var(--space-4) 90px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="lang-switch" role="group" aria-label="Language / Langue">
+    <button type="button" class="lang-option is-active" data-lang-btn="en">EN</button>
+    <button type="button" class="lang-option" data-lang-btn="fr">FR</button>
+  </div>
+
+  <div class="wrap">
+
+    <header class="hero">
+      <div class="mark" aria-hidden="true">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 16.5L14 20.5L22.5 11" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="brand-row">
+        <span class="brand-name">AirLedger</span>
+      </div>
+      <h1 class="doc-title">
+        <span data-lang-block="en" class="is-active">Privacy Policy</span>
+        <span data-lang-block="fr">Politique de confidentialité</span>
+      </h1>
+      <span class="doc-updated">
+        <span data-lang-block="en" class="is-active">LAST UPDATED — JULY 2026</span>
+        <span data-lang-block="fr">DERNIÈRE MISE À JOUR — JUILLET 2026</span>
+      </span>
+    </header>
+
+    <!-- Trust summary : signature element -->
+    <div class="trust-box">
+      <div class="trust-headline">
+        <span class="dot" aria-hidden="true"></span>
+        <span data-lang-block="en" class="is-active">Nothing leaves your device</span>
+        <span data-lang-block="fr">Rien ne quitte votre appareil</span>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <svg class="check" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#FF385C" fill-opacity="0.12"/><path d="M6 10.2L8.5 12.7L14 7" stroke="#FF385C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p data-lang-block="en" class="is-active"><strong>No server.</strong> AirLedger has no backend — there's nowhere for your data to go.</p>
+          <p data-lang-block="fr"><strong>Aucun serveur.</strong> AirLedger n'a pas de backend — il n'y a nulle part où vos données pourraient aller.</p>
+        </div>
+        <div class="trust-item">
+          <svg class="check" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#FF385C" fill-opacity="0.12"/><path d="M6 10.2L8.5 12.7L14 7" stroke="#FF385C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p data-lang-block="en" class="is-active"><strong>No account.</strong> No sign-up, no login, no email address required.</p>
+          <p data-lang-block="fr"><strong>Aucun compte.</strong> Pas d'inscription, pas de connexion, pas d'adresse e-mail requise.</p>
+        </div>
+        <div class="trust-item">
+          <svg class="check" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#FF385C" fill-opacity="0.12"/><path d="M6 10.2L8.5 12.7L14 7" stroke="#FF385C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p data-lang-block="en" class="is-active"><strong>No tracking.</strong> No analytics, no telemetry, no third-party scripts of any kind.</p>
+          <p data-lang-block="fr"><strong>Aucun pistage.</strong> Pas d'analytics, pas de télémétrie, aucun script tiers.</p>
+        </div>
+        <div class="trust-item">
+          <svg class="check" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#FF385C" fill-opacity="0.12"/><path d="M6 10.2L8.5 12.7L14 7" stroke="#FF385C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p data-lang-block="en" class="is-active"><strong>Your device only.</strong> Everything is saved locally in your browser and deleted on uninstall.</p>
+          <p data-lang-block="fr"><strong>Votre appareil, uniquement.</strong> Tout est enregistré localement dans votre navigateur et supprimé à la désinstallation.</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="toc" aria-label="Table of contents">
+      <a href="#reads"><span data-lang-block="en" class="is-active">What it reads</span><span data-lang-block="fr">Ce qui est lu</span></a>
+      <a href="#stores"><span data-lang-block="en" class="is-active">What it stores</span><span data-lang-block="fr">Ce qui est stocké</span></a>
+      <a href="#not"><span data-lang-block="en" class="is-active">What it doesn't do</span><span data-lang-block="fr">Ce qu'il ne fait pas</span></a>
+      <a href="#permissions"><span data-lang-block="en" class="is-active">Permissions</span><span data-lang-block="fr">Autorisations</span></a>
+      <a href="#uninstall"><span data-lang-block="en" class="is-active">Uninstalling</span><span data-lang-block="fr">Désinstallation</span></a>
+      <a href="#contact"><span data-lang-block="en" class="is-active">Contact</span><span data-lang-block="fr">Contact</span></a>
+    </nav>
+
+    <section class="policy-section" id="reads">
+      <span class="section-num">01</span>
+      <h2><span data-lang-block="en" class="is-active">What AirLedger reads</span><span data-lang-block="fr">Ce que AirLedger lit</span></h2>
+      <p data-lang-block="en" class="is-active">
+        When you open your Airbnb host <strong>Reservations</strong> or <strong>multi-calendar</strong> pages (on <code>www.airbnb.com</code> or <code>www.airbnb.fr</code>) with AirLedger installed, the extension reads reservation data that Airbnb has already loaded into that page for you — check-in/check-out dates, listing name, guest name, confirmation code, reservation status, and payout amount. This is the same data you can already see on the page yourself; AirLedger does not access any additional data, does not log in on your behalf, and does not make any network requests of its own.
+      </p>
+      <p data-lang-block="fr">
+        Lorsque vous ouvrez vos pages hôte Airbnb <strong>Réservations</strong> ou <strong>calendrier multi-logements</strong> (sur <code>www.airbnb.com</code> ou <code>www.airbnb.fr</code>) avec AirLedger installé, l'extension lit les données de réservation qu'Airbnb a déjà chargées sur cette page pour vous — dates d'arrivée/de départ, nom du logement, nom du voyageur, code de confirmation, statut de la réservation, et montant du versement. Ce sont les mêmes données que vous pouvez déjà voir vous-même sur la page ; AirLedger n'accède à aucune donnée supplémentaire, ne se connecte pas à votre place, et n'effectue aucune requête réseau de son côté.
+      </p>
+    </section>
+
+    <section class="policy-section" id="stores">
+      <span class="section-num">02</span>
+      <h2><span data-lang-block="en" class="is-active">What AirLedger stores</span><span data-lang-block="fr">Ce que AirLedger stocke</span></h2>
+      <p data-lang-block="en" class="is-active">
+        The reservation data you scan, along with your saved preferences (average cleaning cost, selected language), is stored using Chrome's built-in <code>chrome.storage.local</code> API. This storage is local to your browser profile on your device. AirLedger has no backend server, so this data is never sent anywhere, never leaves your device, and is never seen by the developer.
+      </p>
+      <p data-lang-block="fr">
+        Les données de réservation que vous scannez, ainsi que vos préférences enregistrées (coût moyen de ménage, langue choisie), sont stockées via l'API native de Chrome <code>chrome.storage.local</code>. Ce stockage est local à votre profil de navigateur, sur votre appareil. AirLedger n'a aucun serveur : ces données ne sont donc jamais envoyées où que ce soit, ne quittent jamais votre appareil, et ne sont jamais vues par le développeur.
+      </p>
+    </section>
+
+    <section class="policy-section" id="not">
+      <span class="section-num">03</span>
+      <h2><span data-lang-block="en" class="is-active">What AirLedger does not do</span><span data-lang-block="fr">Ce que AirLedger ne fait pas</span></h2>
+      <ul data-lang-block="en" class="is-active">
+        <li>It does not collect personally identifiable information, financial account details, health information, authentication credentials, or browsing history.</li>
+        <li>It does not use analytics, telemetry, or crash-reporting services.</li>
+        <li>It does not make any network requests to any server, including the developer's own — the extension has no backend.</li>
+        <li>It does not sell, rent, or share any data with third parties, because no data ever leaves your device.</li>
+        <li>It does not use your data to determine creditworthiness or for lending purposes.</li>
+        <li>It does not inject ads or modify Airbnb's pages beyond passively reading data already present.</li>
+      </ul>
+      <ul data-lang-block="fr">
+        <li>Il ne collecte pas d'informations permettant d'identifier personnellement l'utilisateur, de détails de compte financier, d'informations de santé, d'identifiants d'authentification, ni d'historique de navigation.</li>
+        <li>Il n'utilise aucun service d'analytics, de télémétrie ou de rapport de plantage.</li>
+        <li>Il n'effectue aucune requête réseau vers un quelconque serveur, y compris celui du développeur — l'extension n'a pas de backend.</li>
+        <li>Il ne vend, ne loue ni ne partage aucune donnée avec des tiers, puisqu'aucune donnée ne quitte jamais votre appareil.</li>
+        <li>Il n'utilise pas vos données pour évaluer une solvabilité ou à des fins de prêt.</li>
+        <li>Il n'injecte pas de publicité et ne modifie pas les pages Airbnb au-delà de la lecture passive des données déjà présentes.</li>
+      </ul>
+    </section>
+
+    <section class="policy-section" id="permissions">
+      <span class="section-num">04</span>
+      <h2><span data-lang-block="en" class="is-active">Permissions explained</span><span data-lang-block="fr">Autorisations expliquées</span></h2>
+
+      <div class="perm-card">
+        <span class="perm-name">storage</span>
+        <p data-lang-block="en" class="is-active">To save your scanned reservations and preferences locally on your device, so you don't have to rescan every time you open the popup.</p>
+        <p data-lang-block="fr">Pour enregistrer vos réservations scannées et vos préférences localement sur votre appareil, afin de ne pas avoir à tout rescanner à chaque ouverture du popup.</p>
+      </div>
+
+      <div class="perm-card">
+        <span class="perm-name">activeTab</span>
+        <p data-lang-block="en" class="is-active">To check whether the tab you currently have open is an Airbnb host page, and to open the Reservations page for you when you click the corresponding button.</p>
+        <p data-lang-block="fr">Pour vérifier si l'onglet actuellement ouvert est une page hôte Airbnb, et pour ouvrir la page Réservations lorsque vous cliquez sur le bouton correspondant.</p>
+      </div>
+
+      <div class="perm-card">
+        <span class="perm-name">airbnb.com / airbnb.fr</span>
+        <p data-lang-block="en" class="is-active">Required for the extension's single purpose: reading reservation data already displayed on your own Airbnb host pages so it can be counted and summarized.</p>
+        <p data-lang-block="fr">Nécessaire à l'objectif unique de l'extension : lire les données de réservation déjà affichées sur vos propres pages hôte Airbnb afin de les compter et de les synthétiser.</p>
+      </div>
+    </section>
+
+    <section class="policy-section" id="uninstall">
+      <span class="section-num">05</span>
+      <h2><span data-lang-block="en" class="is-active">Uninstalling</span><span data-lang-block="fr">Désinstallation</span></h2>
+      <p data-lang-block="en" class="is-active">Removing the extension from Chrome deletes all locally stored data along with it. There is nothing to delete on any server, because none exists.</p>
+      <p data-lang-block="fr">Supprimer l'extension de Chrome efface également toutes les données stockées localement. Il n'y a rien à supprimer sur un quelconque serveur, puisqu'aucun n'existe.</p>
+    </section>
+
+    <section class="policy-section" id="changes">
+      <span class="section-num">06</span>
+      <h2><span data-lang-block="en" class="is-active">Changes to this policy</span><span data-lang-block="fr">Modifications de cette politique</span></h2>
+      <p data-lang-block="en" class="is-active">If this policy changes, the "Last updated" date at the top of this page will be revised. Material changes will be reflected in the extension's Chrome Web Store listing.</p>
+      <p data-lang-block="fr">Si cette politique venait à changer, la date de "dernière mise à jour" en haut de cette page sera révisée. Les changements significatifs seront répercutés sur la fiche de l'extension dans le Chrome Web Store.</p>
+    </section>
+
+    <section class="policy-section" id="contact">
+      <span class="section-num">07</span>
+      <h2><span data-lang-block="en" class="is-active">Contact</span><span data-lang-block="fr">Contact</span></h2>
+      <p data-lang-block="en" class="is-active">For questions about this policy, contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+      <p data-lang-block="fr">Pour toute question concernant cette politique, contactez : <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    </section>
+
+    <footer>
+      <p data-lang-block="en" class="is-active">AirLedger is an independent tool and is not affiliated with, endorsed by, or sponsored by Airbnb, Inc.</p>
+      <p data-lang-block="fr">AirLedger est un outil indépendant, non affilié à, ni approuvé ou parrainé par Airbnb, Inc.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll("[data-lang-btn]");
+    const blocks = document.querySelectorAll("[data-lang-block]");
+
+    function setLang(lang) {
+      buttons.forEach((b) => b.classList.toggle("is-active", b.dataset.langBtn === lang));
+      blocks.forEach((b) => b.classList.toggle("is-active", b.dataset.langBlock === lang));
+      document.getElementById("html-root").setAttribute("lang", lang);
+      try { localStorage.setItem("airledger_privacy_lang", lang); } catch (e) {}
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => setLang(btn.dataset.langBtn));
+    });
+
+    (function initLang() {
+      let saved = null;
+      try { saved = localStorage.getItem("airledger_privacy_lang"); } catch (e) {}
+      if (saved === "fr" || saved === "en") {
+        setLang(saved);
+        return;
+      }
+      const browserLang = (navigator.language || "en").toLowerCase();
+      setLang(browserLang.startsWith("fr") ? "fr" : "en");
+    })();
+  </script>
+
+</body>
+</html>
